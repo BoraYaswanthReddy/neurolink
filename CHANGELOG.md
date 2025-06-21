@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/juspay/neurolink/compare/v1.9.0...v1.10.0) (2025-06-21)
+
+
+### Features
+
+* **cli:** improve provider status accuracy and error handling ([523e845](https://github.com/juspay/neurolink/commit/523e84566fee5d9afa3638186f90c628e20e4894))
+
 # 1.9.0 (2025-06-20)
 
 
