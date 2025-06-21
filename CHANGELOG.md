@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/juspay/neurolink/compare/v1.10.0...v1.11.0) (2025-06-21)
+
+
+### Features
+
+* finalize MCP ecosystem and resolve all TypeScript errors ([605d8b2](https://github.com/juspay/neurolink/commit/605d8b2ea10c824077e1379ac47a0c065f0a8095))
+
 # [1.10.0](https://github.com/juspay/neurolink/compare/v1.9.0...v1.10.0) (2025-06-21)
 
 ### Features
