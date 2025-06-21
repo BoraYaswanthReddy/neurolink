@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/juspay/neurolink/compare/v1.11.0...v1.11.1) (2025-06-21)
+
+
+### Bug Fixes
+
+* add backward compatiblity for gemini ([5e84dab](https://github.com/juspay/neurolink/commit/5e84dab598156a5b77d05b343d0d69ecf91f31b0))
+
 # [1.11.0](https://github.com/juspay/neurolink/compare/v1.10.0...v1.11.0) (2025-06-21)
 
 
