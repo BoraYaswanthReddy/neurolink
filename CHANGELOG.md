@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/juspay/neurolink/compare/v1.11.1...v1.11.2) (2025-06-22)
+
+
+### Bug Fixes
+
+* **ci:** refactor auto-converted Node.js scripts ([4088888](https://github.com/juspay/neurolink/commit/408888863f8223e64269423412f5c79a35ddfe36))
+
 ## [1.11.1](https://github.com/juspay/neurolink/compare/v1.11.0...v1.11.1) (2025-06-21)
 
 ### Bug Fixes
