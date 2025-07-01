@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/juspay/neurolink/compare/v3.0.0...v3.0.1) (2025-07-01)
+
+
+### Bug Fixes
+
+* **cli:** honor --model parameter in CLI commands ([467ea85](https://github.com/juspay/neurolink/commit/467ea8548688a9db6046c98dbfd268ecd297605c))
+
 # [3.0.0](https://github.com/juspay/neurolink/compare/v2.1.0...v3.0.0) (2025-07-01)
 
 
