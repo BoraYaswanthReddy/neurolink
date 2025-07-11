@@ -1,3 +1,42 @@
+# [5.0.0](https://github.com/juspay/neurolink/compare/v4.2.0...v5.0.0) (2025-07-11)
+
+
+* refactor(cli)!: remove agent-generate command, unify CLI to single generate command ([9c034b7](https://github.com/juspay/neurolink/commit/9c034b7b5a8df3b861fccae0e617c5aa4c85a903))
+
+
+### Bug Fixes
+
+* **scripts:** update docs:generate to use docs:validate instead of removed docs:sync ([3277bab](https://github.com/juspay/neurolink/commit/3277bab3eb1cec24a60fe28bf3897fce63d83d3a))
+
+
+### BREAKING CHANGES
+
+* agent-generate command has been removed
+
+The agent-generate command has been completely removed from the CLI. All 
+functionality is now available through the enhanced generate command with 
+tools enabled by default.
+
+### Changes Made:
+- Delete src/cli/commands/agent-generate.ts command implementation
+- Remove agent-generate import and registration from src/cli/index.ts
+- Update docs/CLI-GUIDE.md to remove agent-generate documentation
+- Update memory-bank documentation files to reflect unified approach
+- Remove agent-generate test cases from scripts/corrected-functionality-test.js
+
+### Migration Guide:
+- Replace `neurolink agent-generate "prompt"` with `neurolink generate "prompt"`
+- Tools are enabled by default in generate command
+- Use `--disable-tools` flag if tool-calling is not desired
+- All previous agent-generate functionality available in generate command
+
+### Technical Impact:
+- Simplified CLI interface with single text generation command
+- Reduced codebase complexity and maintenance overhead
+- Enhanced generate command provides all tool-calling capabilities
+- Zero breaking changes to core functionality
+- Clean TypeScript compilation and documentation consistency
+
 # [4.2.0](https://github.com/juspay/neurolink/compare/v4.1.1...v4.2.0) (2025-07-11)
 
 ### Features
