@@ -1,3 +1,10 @@
+# [6.1.0](https://github.com/juspay/neurolink/compare/v6.0.0...v6.1.0) (2025-07-24)
+
+
+### Features
+
+* **github:** enhance GitHub project configuration and community features ([deb1407](https://github.com/juspay/neurolink/commit/deb1407cb8c7be7eff4baf365f6600da33ac4255))
+
 # [6.0.0](https://github.com/juspay/neurolink/compare/v5.3.0...v6.0.0) (2025-07-24)
 
 
