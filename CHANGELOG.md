@@ -1,3 +1,10 @@
+## [7.3.1](https://github.com/juspay/neurolink/compare/v7.3.0...v7.3.1) (2025-08-04)
+
+
+### Bug Fixes
+
+* **docs:** resolve GitHub Actions workflow YAML parsing errors ([182416d](https://github.com/juspay/neurolink/commit/182416d03e1887c35619013a6a92cf3337d604a1))
+
 # [7.3.0](https://github.com/juspay/neurolink/compare/v7.2.0...v7.3.0) (2025-08-04)
 
 
