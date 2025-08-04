@@ -1,3 +1,10 @@
+## [7.3.7](https://github.com/juspay/neurolink/compare/v7.3.6...v7.3.7) (2025-08-04)
+
+
+### Bug Fixes
+
+* **docs:** configure pymdownx.emoji to properly render Material Design icons ([09ba764](https://github.com/juspay/neurolink/commit/09ba764e0cb57eac3d365d53754d32ef7a178bcf))
+
 ## [7.3.6](https://github.com/juspay/neurolink/compare/v7.3.5...v7.3.6) (2025-08-04)
 
 
