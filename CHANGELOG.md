@@ -1,3 +1,10 @@
+## [7.3.4](https://github.com/juspay/neurolink/compare/v7.3.3...v7.3.4) (2025-08-04)
+
+
+### Bug Fixes
+
+* **docs:** retry deployment to apply .nojekyll fix for MkDocs Material theme ([ce0afab](https://github.com/juspay/neurolink/commit/ce0afab3791dc9aa10c468ba5f48783301d092cf))
+
 ## [7.3.3](https://github.com/juspay/neurolink/compare/v7.3.2...v7.3.3) (2025-08-04)
 
 
