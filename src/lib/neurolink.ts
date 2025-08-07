@@ -41,6 +41,7 @@ import {
 import type { InMemoryMCPServerConfig } from "./types/mcpTypes.js";
 import type { JsonValue, UnknownRecord } from "./types/common.js";
 import type { ToolArgs } from "./types/tools.js";
+import { EventEmitter } from "events";
 
 // Provider and MCP diagnostic types
 export interface ProviderStatus {
@@ -79,6 +80,7 @@ export interface MCPServerInfo {
 
 export class NeuroLink {
   private mcpInitialized = false;
+  private emitter = new EventEmitter();
 
   // Tool registration support
   private customTools: Map<string, SimpleTool> = new Map();
@@ -148,6 +150,12 @@ export class NeuroLink {
       throw new Error("Input text is required and must be a non-empty string");
     }
 
+    // Emit generation start event
+    this.emitter.emit("generation:start", {
+      provider: options.provider || "auto",
+      timestamp: startTime,
+    });
+
     // Convert to internal TextGenerationOptions for compatibility
     const textOptions: TextGenerationOptions = {
       prompt: options.input.text,
@@ -167,6 +175,14 @@ export class NeuroLink {
 
     // Use redesigned generation logic
     const textResult = await this.generateTextInternal(textOptions);
+
+    // Emit generation completion event
+    this.emitter.emit("generation:end", {
+      provider: textResult.provider,
+      responseTime: Date.now() - startTime,
+      toolsUsed: textResult.toolsUsed,
+      timestamp: Date.now(),
+    });
 
     // Convert back to GenerateResult
     const generateResult: GenerateResult = {
@@ -567,6 +583,11 @@ export class NeuroLink {
       );
     }
 
+    // Emit stream start event
+    this.emitter.emit("stream:start", {
+      provider: options.provider || "auto",
+    });
+
     // Initialize MCP if needed
     await this.initializeMCP();
 
@@ -603,6 +624,12 @@ export class NeuroLink {
       mcpLogger.debug(`[${functionTag}] MCP-enabled streaming completed`, {
         responseTime,
         provider: providerName,
+      });
+
+      // Emit stream completion event
+      this.emitter.emit("stream:end", {
+        provider: providerName,
+        responseTime,
       });
 
       // Convert to StreamResult format - Include analytics and evaluation from provider
@@ -642,6 +669,13 @@ export class NeuroLink {
       const streamResult = await provider.stream(options);
       const responseTime = Date.now() - startTime;
 
+      // Emit stream completion event for fallback
+      this.emitter.emit("stream:end", {
+        provider: providerName,
+        responseTime,
+        fallback: true,
+      });
+
       return {
         stream: streamResult.stream,
         provider: providerName,
@@ -662,6 +696,14 @@ export class NeuroLink {
     }
   }
 
+  /**
+   * Get the EventEmitter to listen to NeuroLink events
+   * @returns EventEmitter instance
+   */
+  getEventEmitter() {
+    return this.emitter;
+  }
+
   // ========================================
   // Tool Registration API
   // ========================================
@@ -672,6 +714,12 @@ export class NeuroLink {
    * @param tool - Tool configuration
    */
   registerTool(name: string, tool: SimpleTool): void {
+      // Emit tool registration start event
+      this.emitter.emit("tool:register:start", {
+        toolName: name,
+        timestamp: Date.now(),
+      });
+
     try {
       // Validate tool configuration
       validateTool(name, tool);
@@ -694,8 +742,23 @@ export class NeuroLink {
       this.inMemoryServers.set(serverId, mcpServer);
 
       logger.info(`Registered custom tool: ${name}`);
+
+      // Emit tool registration success event
+      this.emitter.emit("tool:register:end", {
+        toolName: name,
+        success: true,
+        timestamp: Date.now(),
+      });
     } catch (error) {
       logger.error(`Failed to register tool ${name}:`, error);
+
+      // Emit tool registration error event
+      this.emitter.emit("tool:register:error", {
+        toolName: name,
+        error: error instanceof Error ? error : new Error(String(error)),
+        timestamp: Date.now(),
+      });
+
       throw error;
     }
   }
@@ -795,6 +858,13 @@ export class NeuroLink {
     options?: { timeout?: number },
   ): Promise<T> {
     const functionTag = "NeuroLink.executeTool";
+    const startTime = Date.now();
+
+    // Emit tool start event
+    this.emitter.emit("tool:start", {
+      toolName,
+      timestamp: startTime,
+    });
 
     try {
       mcpLogger.debug(`[${functionTag}] Executing tool: ${toolName}`, {
@@ -818,6 +888,14 @@ export class NeuroLink {
         mcpLogger.debug(`[${functionTag}] Custom tool executed successfully`, {
           toolName,
           executionTime,
+        });
+
+        // Emit tool success event
+        this.emitter.emit("tool:end", {
+          toolName,
+          responseTime: Date.now() - startTime,
+          success: true,
+          timestamp: Date.now(),
         });
 
         return result as T;
@@ -849,6 +927,14 @@ export class NeuroLink {
                 toolName,
                 serverId,
                 executionTime,
+              });
+
+              // Emit tool success event
+              this.emitter.emit("tool:end", {
+                toolName,
+                responseTime: Date.now() - startTime,
+                success: true,
+                timestamp: Date.now(),
               });
 
               // Handle MCP-style results

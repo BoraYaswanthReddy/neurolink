@@ -213,6 +213,156 @@ All providers now include method aliases that match CLI command names for consis
 
 ## 🆕 NeuroLink Class API
 
+### `getEventEmitter()`
+
+**NEW!** Access the EventEmitter for real-time event monitoring and progress tracking.
+
+```typescript
+getEventEmitter(): EventEmitter
+```
+
+**Returns:** Node.js `EventEmitter` instance for listening to NeuroLink events
+
+**Available Events:**
+
+```typescript
+interface NeuroLinkEvents {
+  'generation:start': {
+    provider: string;
+    model?: string;
+    prompt: string;
+    timestamp: number;
+    requestId: string;
+  };
+  
+  'generation:end': {
+    provider: string;
+    model?: string;
+    result: string;
+    responseTime: number;
+    timestamp: number;
+    requestId: string;
+    tokenUsage?: {
+      input: number;
+      output: number;
+      total: number;
+    };
+  };
+  
+  'stream:start': {
+    provider: string;
+    model?: string;
+    prompt: string;
+    timestamp: number;
+    requestId: string;
+  };
+  
+  'stream:end': {
+    provider: string;
+    model?: string;
+    totalChunks: number;
+    responseTime: number;
+    timestamp: number;
+    requestId: string;
+  };
+  
+  'tool:start': {
+    toolName: string;
+    parameters: Record<string, any>;
+    timestamp: number;
+    requestId: string;
+  };
+  
+  'tool:end': {
+    toolName: string;
+    result: any;
+    responseTime: number;
+    timestamp: number;
+    requestId: string;
+  };
+  
+  'tool:register': {
+    toolName: string;
+    timestamp: number;
+  };
+  
+  'tool:registered': {
+    toolName: string;
+    success: boolean;
+    timestamp: number;
+    error?: Error;
+  };
+}
+```
+
+**Examples:**
+
+```typescript
+import { NeuroLink } from "@juspay/neurolink";
+
+const neurolink = new NeuroLink();
+const emitter = neurolink.getEventEmitter();
+
+// Listen to generation events
+emitter.on('generation:start', (data) => {
+  console.log(`🚀 Generation started with ${data.provider}`);
+  console.log(`📝 Prompt: ${data.prompt.slice(0, 50)}...`);
+});
+
+emitter.on('generation:end', (data) => {
+  console.log(`✅ Generation completed in ${data.responseTime}ms`);
+  console.log(`📊 Tokens used: ${data.tokenUsage?.total || 'N/A'}`);
+});
+
+// Listen to streaming events
+emitter.on('stream:start', (data) => {
+  console.log(`🌊 Streaming started with ${data.provider}`);
+});
+
+emitter.on('stream:end', (data) => {
+  console.log(`🏁 Streaming completed: ${data.totalChunks} chunks in ${data.responseTime}ms`);
+});
+
+// Listen to tool events
+emitter.on('tool:start', (data) => {
+  console.log(`🔧 Tool execution started: ${data.toolName}`);
+});
+
+emitter.on('tool:end', (data) => {
+  console.log(`✅ Tool execution completed: ${data.toolName} (${data.responseTime}ms)`);
+});
+
+// Listen to tool registration events
+emitter.on('tool:registered', (data) => {
+  if (data.success) {
+    console.log(`📋 Tool registered successfully: ${data.toolName}`);
+  } else {
+    console.error(`❌ Tool registration failed: ${data.toolName}`, data.error);
+  }
+});
+
+// Generate text with event monitoring
+const result = await neurolink.generate("What is artificial intelligence?");
+```
+
+**Use Cases:**
+
+- **Real-time Progress Tracking**: Build progress bars and status indicators for long-running operations
+- **Analytics & Monitoring**: Track usage patterns, performance metrics, and provider utilization
+- **Debugging & Troubleshooting**: Monitor tool execution and identify bottlenecks
+- **User Experience Enhancement**: Provide real-time feedback in web applications
+- **Cost Tracking**: Monitor token usage and API costs across different providers
+- **Performance Optimization**: Identify slow operations and optimize configurations
+
+**Event Data Features:**
+
+- ✅ **Silent by Default**: Events are captured without console output noise
+- ✅ **Rich Context**: Each event includes provider, timing, and operation details
+- ✅ **Request Tracking**: Unique `requestId` for correlating related events
+- ✅ **Error Handling**: Comprehensive error information in failure events
+- ✅ **Performance Metrics**: Response times and token usage data
+- ✅ **Tool Transparency**: Complete visibility into tool execution lifecycle
+
 ### `addMCPServer(serverId, config)`
 
 **NEW!** Programmatically add MCP servers at runtime for dynamic tool ecosystem management.

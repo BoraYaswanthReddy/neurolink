@@ -44,6 +44,7 @@ npx @juspay/neurolink generate "Hello" --provider litellm --model "google/gemini
 - **⚡ Performance** - Fast response times with streaming support and 68% improved status checks
 - **🛡️ Error Recovery** - Graceful failures with provider fallback and retry logic
 - **📊 Analytics & Evaluation** - Built-in usage tracking and AI-powered quality assessment
+- **🎯 Real-time Event Monitoring** - EventEmitter integration for progress tracking and debugging
 - **🔧 MCP Integration** - Model Context Protocol with 6 built-in tools and 58+ discoverable servers
 
 ---
@@ -162,12 +163,42 @@ npx @juspay/neurolink generate "Write a proposal" --enable-analytics --enable-ev
 npx @juspay/neurolink stream "What time is it and write a file with the current date"
 ```
 
-#### SDK with LiteLLM and Enhancement Features
+#### SDK with Real-time Event Monitoring
 
 ```typescript
 import { NeuroLink, AIProviderFactory } from "@juspay/neurolink";
 
-// LiteLLM multi-model comparison
+// NEW: Real-time Event Monitoring
+const neurolink = new NeuroLink();
+const emitter = neurolink.getEventEmitter();
+
+// Listen to generation events for progress tracking
+emitter.on('generation:start', (data) => {
+  console.log(`🚀 Generation started with ${data.provider}`);
+  console.log(`📝 Prompt: ${data.prompt.slice(0, 50)}...`);
+});
+
+emitter.on('generation:end', (data) => {
+  console.log(`✅ Generation completed in ${data.responseTime}ms`);
+  console.log(`📊 Tokens used: ${data.tokenUsage?.total || 'N/A'}`);
+});
+
+// Listen to tool events for debugging
+emitter.on('tool:start', (data) => {
+  console.log(`🔧 Tool execution started: ${data.toolName}`);
+});
+
+emitter.on('tool:end', (data) => {
+  console.log(`✅ Tool completed: ${data.toolName} (${data.responseTime}ms)`);
+});
+
+// Generate with event monitoring
+const result = await neurolink.generate({
+  input: { text: "What time is it and calculate 2+2?" },
+  provider: "google-ai",
+});
+
+// LiteLLM multi-model comparison with events
 const models = [
   "openai/gpt-4o",
   "anthropic/claude-3-5-sonnet",
@@ -185,17 +216,16 @@ const comparisons = await Promise.all(
 );
 
 // Enhanced generation with analytics
-const neurolink = new NeuroLink();
-const result = await neurolink.generate({
+const analyticsResult = await neurolink.generate({
   input: { text: "Write a business proposal" },
   enableAnalytics: true, // Get usage & cost data
   enableEvaluation: true, // Get AI quality scores
   context: { project: "Q1-sales" },
 });
 
-console.log("📊 Usage:", result.analytics);
-console.log("⭐ Quality:", result.evaluation);
-console.log("Response:", result.content);
+console.log("📊 Usage:", analyticsResult.analytics);
+console.log("⭐ Quality:", analyticsResult.evaluation);
+console.log("Response:", analyticsResult.content);
 ```
 
 ### Environment Setup
