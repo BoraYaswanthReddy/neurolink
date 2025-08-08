@@ -62,6 +62,7 @@ import {
   logStructuredError,
   CircuitBreaker,
 } from "./utils/errorHandling.js";
+import { EventEmitter } from "events";
 
 // Provider and MCP diagnostic types
 export interface ProviderStatus {
@@ -100,6 +101,7 @@ export interface MCPServerInfo {
 
 export class NeuroLink {
   private mcpInitialized = false;
+  private emitter = new EventEmitter();
 
   // Tool registration support
   private customTools: Map<string, SimpleTool> = new Map();
@@ -117,6 +119,26 @@ export class NeuroLink {
       lastExecutionTime: number;
     }
   > = new Map();
+  
+  /**
+   * Helper method to emit tool end event in a consistent way
+   * Used by executeTool in both success and error paths
+   * @param toolName - Name of the tool
+   * @param startTime - Timestamp when tool execution started
+   * @param success - Whether the tool execution was successful
+   */
+  private emitToolEndEvent(
+    toolName: string,
+    startTime: number,
+    success: boolean
+  ): void {
+    this.emitter.emit("tool:end", {
+      toolName,
+      responseTime: Date.now() - startTime,
+      success,
+      timestamp: Date.now(),
+    });
+  }
 
   constructor() {
     // SDK always disables manual MCP config for security
@@ -190,8 +212,6 @@ export class NeuroLink {
   async generate(
     optionsOrPrompt: GenerateOptions | string,
   ): Promise<GenerateResult> {
-    const startTime = Date.now();
-
     // Convert string prompt to full options
     const options: GenerateOptions =
       typeof optionsOrPrompt === "string"
@@ -202,6 +222,14 @@ export class NeuroLink {
     if (!options.input?.text || typeof options.input.text !== "string") {
       throw new Error("Input text is required and must be a non-empty string");
     }
+
+    const startTime = Date.now();
+
+    // Emit generation start event
+    this.emitter.emit("generation:start", {
+      provider: options.provider || "auto",
+      timestamp: startTime,
+    });
 
     // Process factory configuration
     const factoryResult = processFactoryOptions(options);
@@ -257,6 +285,14 @@ export class NeuroLink {
 
     // Use redesigned generation logic
     const textResult = await this.generateTextInternal(textOptions);
+
+    // Emit generation completion event
+    this.emitter.emit("generation:end", {
+      provider: textResult.provider,
+      responseTime: Date.now() - startTime,
+      toolsUsed: textResult.toolsUsed,
+      timestamp: Date.now(),
+    });
 
     // Convert back to GenerateResult
     const generateResult: GenerateResult = {
@@ -748,6 +784,12 @@ export class NeuroLink {
       );
     }
 
+    // Emit stream start event
+    this.emitter.emit("stream:start", {
+      provider: options.provider || "auto",
+      timestamp: startTime,
+    });
+
     // Process factory configuration for streaming
     const factoryResult = processFactoryOptions(options);
     const streamingResult = processStreamingFactoryOptions(options);
@@ -839,6 +881,12 @@ export class NeuroLink {
         provider: providerName,
       });
 
+      // Emit stream completion event
+      this.emitter.emit("stream:end", {
+        provider: providerName,
+        responseTime,
+      });
+
       // Convert to StreamResult format - Include analytics and evaluation from provider
       return {
         stream,
@@ -889,6 +937,13 @@ export class NeuroLink {
       const streamResult = await provider.stream(cleanOptions);
       const responseTime = Date.now() - startTime;
 
+      // Emit stream completion event for fallback
+      this.emitter.emit("stream:end", {
+        provider: providerName,
+        responseTime,
+        fallback: true,
+      });
+
       return {
         stream: streamResult.stream,
         provider: providerName,
@@ -919,6 +974,14 @@ export class NeuroLink {
     }
   }
 
+  /**
+   * Get the EventEmitter to listen to NeuroLink events
+   * @returns EventEmitter instance
+   */
+  getEventEmitter() {
+    return this.emitter;
+  }
+
   // ========================================
   // Tool Registration API
   // ========================================
@@ -929,6 +992,12 @@ export class NeuroLink {
    * @param tool - Tool configuration
    */
   registerTool(name: string, tool: SimpleTool): void {
+    // Emit tool registration start event
+    this.emitter.emit("tools-register:start", {
+      toolName: name,
+      timestamp: Date.now(),
+    });
+
     try {
       // Validate tool configuration
       validateTool(name, tool);
@@ -951,6 +1020,13 @@ export class NeuroLink {
       this.inMemoryServers.set(serverId, mcpServer);
 
       logger.info(`Registered custom tool: ${name}`);
+
+      // Emit tool registration success event
+      this.emitter.emit("tools-register:end", {
+        toolName: name,
+        success: true,
+        timestamp: Date.now(),
+      });
     } catch (error) {
       logger.error(`Failed to register tool ${name}:`, error);
       throw error;
@@ -1073,6 +1149,12 @@ export class NeuroLink {
     const functionTag = "NeuroLink.executeTool";
     const executionStartTime = Date.now();
 
+    // Emit tool start event
+    this.emitter.emit("tool:start", {
+      toolName,
+      timestamp: executionStartTime,
+    });
+
     // Set default options
     const finalOptions = {
       timeout: options?.timeout || 30000, // 30 second default timeout
@@ -1170,6 +1252,9 @@ export class NeuroLink {
         circuitBreakerState: circuitBreaker.getState(),
       });
 
+      // Emit tool end event using the helper method
+      this.emitToolEndEvent(toolName, executionStartTime, true);
+
       return result;
     } catch (error) {
       // Update failure metrics
@@ -1214,6 +1299,9 @@ export class NeuroLink {
           new Error(String(error)),
         );
       }
+
+      // Emit tool end event using the helper method
+      this.emitToolEndEvent(toolName, executionStartTime, false);
 
       // Add execution context to structured error
       structuredError = new NeuroLinkError({

@@ -44,6 +44,7 @@ npx @juspay/neurolink generate "Hello" --provider litellm --model "google/gemini
 - **⚡ Performance** - Fast response times with streaming support and 68% improved status checks
 - **🛡️ Error Recovery** - Graceful failures with provider fallback and retry logic
 - **📊 Analytics & Evaluation** - Built-in usage tracking and AI-powered quality assessment
+- **🎯 Real-time Event Monitoring** - EventEmitter integration for progress tracking and debugging
 - **🔧 MCP Integration** - Model Context Protocol with 6 built-in tools and 58+ discoverable servers
 - **🚀 Lighthouse Integration** - Unified tool registration API supporting both object and array formats for seamless Lighthouse tool import
 
