@@ -213,6 +213,142 @@ All providers now include method aliases that match CLI command names for consis
 
 ## 🆕 NeuroLink Class API
 
+### `getEventEmitter()`
+
+**NEW!** Access the EventEmitter for real-time event monitoring and progress tracking.
+
+```typescript
+getEventEmitter(): EventEmitter
+```
+
+**Returns:** Node.js `EventEmitter` instance for listening to NeuroLink events
+
+**Available Events:**
+
+```typescript
+interface NeuroLinkEvents {
+  'generation:start': {
+    provider: string;
+    timestamp: number;
+  };
+  
+  'generation:end': {
+    provider: string;
+    responseTime: number;
+    toolsUsed?: string[];
+    timestamp: number;
+  };
+  
+  'stream:start': {
+    provider: string;
+    timestamp: number;
+  };
+  
+  'stream:end': {
+    provider: string;
+    responseTime: number;
+    fallback?: boolean;
+  };
+  
+  'tool:start': {
+    toolName: string;
+    timestamp: number;
+  };
+  
+  'tool:end': {
+    toolName: string;
+    responseTime: number;
+    success: boolean;
+    timestamp: number;
+  };
+  
+  'tools-register:start': {
+    toolName: string;
+    timestamp: number;
+  };
+  
+  'tools-register:end': {
+    toolName: string;
+    success: boolean;
+    timestamp: number;
+  };
+}
+```
+
+**Examples:**
+
+```typescript
+import { NeuroLink } from "@juspay/neurolink";
+
+const neurolink = new NeuroLink();
+const emitter = neurolink.getEventEmitter();
+
+// Listen to generation events
+emitter.on('generation:start', (data) => {
+  console.log(`🚀 Generation started with ${data.provider}`);
+  console.log(`⏱️ Started at timestamp: ${data.timestamp}`);
+});
+
+emitter.on('generation:end', (data) => {
+  console.log(`✅ Generation completed in ${data.responseTime}ms`);
+  if (data.toolsUsed && data.toolsUsed.length > 0) {
+    console.log(`🔧 Tools used: ${data.toolsUsed.join(', ')}`);
+  }
+});
+
+// Listen to streaming events
+emitter.on('stream:start', (data) => {
+  console.log(`🌊 Streaming started with ${data.provider}`);
+});
+
+emitter.on('stream:end', (data) => {
+  console.log(`🏁 Streaming completed in ${data.responseTime}ms`);
+  if (data.fallback) {
+    console.log(`⚠️ Fallback provider was used`);
+  }
+});
+
+// Listen to tool events
+emitter.on('tool:start', (data) => {
+  console.log(`🔧 Tool execution started: ${data.toolName}`);
+  console.log(`⏱️ Started at timestamp: ${data.timestamp}`);
+});
+
+emitter.on('tool:end', (data) => {
+  console.log(`${data.success ? '✅' : '❌'} Tool execution ${data.success ? 'completed' : 'failed'}: ${data.toolName} (${data.responseTime}ms)`);
+});
+
+// Listen to tool registration events
+emitter.on('tools-register:start', (data) => {
+  console.log(`📋 Registering tool: ${data.toolName}`);
+});
+
+emitter.on('tools-register:end', (data) => {
+  console.log(`${data.success ? '✅' : '❌'} Tool ${data.success ? 'registered successfully' : 'registration failed'}: ${data.toolName}`);
+});
+
+// Generate text with event monitoring
+const result = await neurolink.generate("What is artificial intelligence?");
+```
+
+**Use Cases:**
+
+- **Real-time Progress Tracking**: Build progress bars and status indicators for long-running operations
+- **Analytics & Monitoring**: Track usage patterns, performance metrics, and provider utilization
+- **Debugging & Troubleshooting**: Monitor tool execution and identify bottlenecks
+- **User Experience Enhancement**: Provide real-time feedback in web applications
+- **Cost Tracking**: Monitor token usage and API costs across different providers
+- **Performance Optimization**: Identify slow operations and optimize configurations
+
+**Event Data Features:**
+
+- ✅ **Silent by Default**: Events are captured without console output noise
+- ✅ **Rich Context**: Each event includes provider, timing, and operation details
+- ✅ **Request Tracking**: Unique `requestId` for correlating related events
+- ✅ **Error Handling**: Comprehensive error information in failure events
+- ✅ **Performance Metrics**: Response times and token usage data
+- ✅ **Tool Transparency**: Complete visibility into tool execution lifecycle
+
 ### `addMCPServer(serverId, config)`
 
 **NEW!** Programmatically add MCP servers at runtime for dynamic tool ecosystem management.
