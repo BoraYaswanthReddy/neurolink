@@ -1,3 +1,10 @@
+## [7.6.1](https://github.com/juspay/neurolink/compare/v7.6.0...v7.6.1) (2025-08-09)
+
+
+### Bug Fixes
+
+* **docs:** resolve documentation deployment and broken links ([e78d7e8](https://github.com/juspay/neurolink/commit/e78d7e8da6ff16ee266a88beec70a26b67145da2))
+
 # [7.6.0](https://github.com/juspay/neurolink/compare/v7.5.0...v7.6.0) (2025-08-09)
 
 
