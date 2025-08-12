@@ -1,3 +1,9 @@
+## [7.10.0](https://github.com/juspay/neurolink/compare/v7.9.0...v7.10.0) (2025-08-12)
+
+### Features
+
+- **(build):** implement comprehensive build rule enforcement system ([7648cad](https://github.com/juspay/neurolink/commit/7648cadde1676fa20ef74c555919e036bc559ad5))
+
 ## [7.9.0](https://github.com/juspay/neurolink/compare/v7.8.0...v7.9.0) (2025-08-11)
 
 ### Features
