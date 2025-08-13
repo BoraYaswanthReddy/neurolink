@@ -201,6 +201,7 @@ jobs:
         if: steps.validate.outputs.status == 'compliant' && steps.check-permissions.outputs.can_comment == 'true'
         uses: peter-evans/find-comment@v3
         id: find-comment
+        continue-on-error: true
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: "github-actions[bot]"
@@ -209,6 +210,7 @@ jobs:
       - name: Post Minimal Success Comment
         if: steps.validate.outputs.status == 'compliant' && steps.check-permissions.outputs.can_comment == 'true'
         uses: peter-evans/create-or-update-comment@v4
+        continue-on-error: true
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
