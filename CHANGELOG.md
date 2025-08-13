@@ -1,3 +1,9 @@
+## [7.10.2](https://github.com/juspay/neurolink/compare/v7.10.1...v7.10.2) (2025-08-13)
+
+### Bug Fixes
+
+- **(ci):** prevent external contributor PR failures due to comment permissions ([ac76270](https://github.com/juspay/neurolink/commit/ac7627032084f1920bea03ba3a661fb038bbf9cf))
+
 ## [7.10.1](https://github.com/juspay/neurolink/compare/v7.10.0...v7.10.1) (2025-08-13)
 
 ### Bug Fixes
