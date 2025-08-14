@@ -1,3 +1,9 @@
+## [7.11.0](https://github.com/juspay/neurolink/compare/v7.10.3...v7.11.0) (2025-08-14)
+
+### Features
+
+- **(providers):** consolidate provider logic to BaseProvider for consistency and performance ([a5da739](https://github.com/juspay/neurolink/commit/a5da73982523f4cee57bbdf108b54a339a62d9b3))
+
 ## [7.10.3](https://github.com/juspay/neurolink/compare/v7.10.2...v7.10.3) (2025-08-13)
 
 ### Bug Fixes
