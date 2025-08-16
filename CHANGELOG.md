@@ -1,3 +1,9 @@
+## [7.14.3](https://github.com/juspay/neurolink/compare/v7.14.2...v7.14.3) (2025-08-16)
+
+### Bug Fixes
+
+- **(typescript):** eliminate all TypeScript any types for improved type safety ([45043cb](https://github.com/juspay/neurolink/commit/45043cb1e671bdec07cf93ddd8005d18df2f0de0))
+
 ## [7.14.2](https://github.com/juspay/neurolink/compare/v7.14.1...v7.14.2) (2025-08-16)
 
 ### Bug Fixes
