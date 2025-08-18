@@ -1,3 +1,9 @@
+## [7.14.6](https://github.com/juspay/neurolink/compare/v7.14.5...v7.14.6) (2025-08-18)
+
+### Bug Fixes
+
+- **(docs):** improve and update cli guide ([4039044](https://github.com/juspay/neurolink/commit/40390444950f763f4e360783f99256b16eb9aab0))
+
 ## [7.14.5](https://github.com/juspay/neurolink/compare/v7.14.4...v7.14.5) (2025-08-18)
 
 ### Bug Fixes
