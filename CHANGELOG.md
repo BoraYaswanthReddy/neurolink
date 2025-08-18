@@ -1,3 +1,9 @@
+## [7.14.5](https://github.com/juspay/neurolink/compare/v7.14.4...v7.14.5) (2025-08-18)
+
+### Bug Fixes
+
+- **(mcp):** prevent memory leak from uncleared interval timer in MCPCircuitBreaker ([1f2ae47](https://github.com/juspay/neurolink/commit/1f2ae4743dc8657baac9ba28a053c4e9d199cdbc))
+
 ## [7.14.4](https://github.com/juspay/neurolink/compare/v7.14.3...v7.14.4) (2025-08-18)
 
 ### Bug Fixes
