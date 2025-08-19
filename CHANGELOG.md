@@ -1,3 +1,9 @@
+## [7.18.0](https://github.com/juspay/neurolink/compare/v7.17.0...v7.18.0) (2025-08-19)
+
+### Features
+
+- **(dev-experience):** add pre-commit hook for automated quality checks ([7d26726](https://github.com/juspay/neurolink/commit/7d267269e3b2168f3a38c736712beab02777df5c))
+
 ## [7.17.0](https://github.com/juspay/neurolink/compare/v7.16.0...v7.17.0) (2025-08-19)
 
 ### Features
