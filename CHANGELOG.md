@@ -1,3 +1,9 @@
+## [7.19.0](https://github.com/juspay/neurolink/compare/v7.18.0...v7.19.0) (2025-08-19)
+
+### Features
+
+- **(docs):** HUMAN IN THE LOOP - User consent for some tools execution ([3f8db51](https://github.com/juspay/neurolink/commit/3f8db51d3f2ab4a35ee361cb867af5047f178178))
+
 ## [7.18.0](https://github.com/juspay/neurolink/compare/v7.17.0...v7.18.0) (2025-08-19)
 
 ### Features
