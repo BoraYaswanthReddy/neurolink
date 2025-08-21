@@ -1,3 +1,9 @@
+## [7.26.0](https://github.com/juspay/neurolink/compare/v7.25.0...v7.26.0) (2025-08-21)
+
+### Features
+
+- **(core):** implement provider performance metrics and optimization system ([caa68e7](https://github.com/juspay/neurolink/commit/caa68e7fd44d5a15dd48605063b093279b6f82ae))
+
 ## [7.25.0](https://github.com/juspay/neurolink/compare/v7.24.1...v7.25.0) (2025-08-21)
 
 ### Features
