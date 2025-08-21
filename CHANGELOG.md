@@ -1,3 +1,9 @@
+## [7.25.0](https://github.com/juspay/neurolink/compare/v7.24.1...v7.25.0) (2025-08-21)
+
+### Features
+
+- **(middleware):** add custom middleware development guide ([ffd0343](https://github.com/juspay/neurolink/commit/ffd0343a589b267a5b8349a06cdfe2664a942e4c))
+
 ## [7.24.1](https://github.com/juspay/neurolink/compare/v7.24.0...v7.24.1) (2025-08-21)
 
 ## [7.24.0](https://github.com/juspay/neurolink/compare/v7.23.0...v7.24.0) (2025-08-20)
