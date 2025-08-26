@@ -1,3 +1,9 @@
+## [7.29.0](https://github.com/juspay/neurolink/compare/v7.28.1...v7.29.0) (2025-08-26)
+
+### Features
+
+- **(guardrails):** added guardrails as a middleware ([ac60f6b](https://github.com/juspay/neurolink/commit/ac60f6b143a58f86e17481ddb3e067e5307391cf))
+
 ## [7.28.1](https://github.com/juspay/neurolink/compare/v7.28.0...v7.28.1) (2025-08-26)
 
 ### Bug Fixes
