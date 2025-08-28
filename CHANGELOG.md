@@ -1,3 +1,9 @@
+## [7.29.1](https://github.com/juspay/neurolink/compare/v7.29.0...v7.29.1) (2025-08-28)
+
+### Bug Fixes
+
+- **(vertex):** restored support for adc ([238666a](https://github.com/juspay/neurolink/commit/238666ab907fc16945d5de6c5f79637be128f4e6))
+
 ## [7.29.0](https://github.com/juspay/neurolink/compare/v7.28.1...v7.29.0) (2025-08-26)
 
 ### Features
