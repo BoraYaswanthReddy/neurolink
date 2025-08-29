@@ -1,3 +1,9 @@
+## [7.30.0](https://github.com/juspay/neurolink/compare/v7.29.3...v7.30.0) (2025-08-29)
+
+### Features
+
+- **(SDK):** Integrate context summarization with conversation memory BZ-43344 ([a2316ff](https://github.com/juspay/neurolink/commit/a2316ff6df55107316892d33365455e6ebdcbbd9))
+
 ## [7.29.3](https://github.com/juspay/neurolink/compare/v7.29.2...v7.29.3) (2025-08-29)
 
 ### Bug Fixes
