@@ -1,3 +1,12 @@
+## [7.34.0](https://github.com/juspay/neurolink/compare/v7.33.4...v7.34.0) (2025-09-09)
+
+### Features
+
+- **(cli):** expose memory commands to cli from sdk ([b9eb802](https://github.com/juspay/neurolink/commit/b9eb802c0ecfa521327e0423b5a9167119ac2fca))
+- **(cli):** Implement interactive loop mode ([89b5012](https://github.com/juspay/neurolink/commit/89b5012ff44bac58e01846834d05ea50fe37cd35))
+- **(memory):** Add Redis Support for conversation History ([28e2f86](https://github.com/juspay/neurolink/commit/28e2f86b4aa5b6e43d2bc71a86885cca40851e44))
+- **(tool):** Optimize tool discovery and add conversation tutorial ([56c7a3f](https://github.com/juspay/neurolink/commit/56c7a3fac9713cdd17f3f719f793e41fce39259b))
+
 ## [7.33.4](https://github.com/juspay/neurolink/compare/v7.33.3...v7.33.4) (2025-09-04)
 
 ### Bug Fixes
