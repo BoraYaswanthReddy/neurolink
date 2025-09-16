@@ -1,3 +1,9 @@
+## [7.39.0](https://github.com/juspay/neurolink/compare/v7.38.1...v7.39.0) (2025-09-16)
+
+### Features
+
+- **(hitl):** Implemented human in the loop for sdk ([1a66f53](https://github.com/juspay/neurolink/commit/1a66f533d4d92fb33d203947a4c6648a72db631c))
+
 ## [7.38.1](https://github.com/juspay/neurolink/compare/v7.38.0...v7.38.1) (2025-09-16)
 
 ### Bug Fixes
