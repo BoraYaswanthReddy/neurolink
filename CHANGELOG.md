@@ -1,3 +1,9 @@
+## [7.40.0](https://github.com/juspay/neurolink/compare/v7.39.0...v7.40.0) (2025-09-17)
+
+### Features
+
+- **(envsetup):** Added env setup test ([d08917e](https://github.com/juspay/neurolink/commit/d08917e69675aedd468c25697250c24fbfa21372))
+
 ## [7.39.0](https://github.com/juspay/neurolink/compare/v7.38.1...v7.39.0) (2025-09-16)
 
 ### Features
