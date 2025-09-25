@@ -1,3 +1,9 @@
+## [7.47.0](https://github.com/juspay/neurolink/compare/v7.46.0...v7.47.0) (2025-09-25)
+
+### Features
+
+- **(chat):** Implement multimodal UI and extend SDK support ([12a2f59](https://github.com/juspay/neurolink/commit/12a2f59c4826e82ab1feb1347d08980682748ad2))
+
 ## [7.46.0](https://github.com/juspay/neurolink/compare/v7.45.0...v7.46.0) (2025-09-24)
 
 ### Features
