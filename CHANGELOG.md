@@ -1,3 +1,9 @@
+## [7.47.2](https://github.com/juspay/neurolink/compare/v7.47.1...v7.47.2) (2025-09-26)
+
+### Bug Fixes
+
+- **(timestamp):** Incorrect timestamps being stored in redis ([2d66232](https://github.com/juspay/neurolink/commit/2d6623275bc4c1f5986957d476ddcf3933ba61e4))
+
 ## [7.47.1](https://github.com/juspay/neurolink/compare/v7.47.0...v7.47.1) (2025-09-26)
 
 ### Bug Fixes
