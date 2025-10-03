@@ -14,10 +14,10 @@ Comprehensive guides for all NeuroLink features organized by category. Each guid
 
 | Feature                                                                             | Description                                                                                        |
 | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| :material-hand-pointing-up: **[Human-in-the-Loop (HITL)](hitl.md)**                 | Pause AI tool execution for user approval before risky operations like file deletion or API calls. |
-| :material-shield-check: **[Guardrails Middleware](guardrails.md)**                  | Content filtering, PII detection, and safety checks for AI outputs with zero configuration.        |
-| :material-database-export: **[Redis Conversation Export](conversation-history.md)** | Export complete session history as JSON for analytics, debugging, and compliance auditing.         |
-| :material-brain-circuit: **[Context Summarization](../CONTEXT-SUMMARIZATION.md)**   | Automatic conversation compression for long-running sessions to stay within token limits.          |
+| :material-hand-pointing-up: **[Human-in-the-Loop (HITL)](hitl.md)**                  | Pause AI tool execution for user approval before risky operations like file deletion or API calls. |
+| :material-shield-check: **[Guardrails Middleware](guardrails.md)**                   | Content filtering, PII detection, and safety checks for AI outputs with zero configuration.        |
+| :material-database-export: **[Conversation History](conversation-history.md)**       | Retrieve and manage conversation session history with in-memory or Redis storage.                  |
+| :material-brain-circuit: **[Context Summarization](../CONTEXT-SUMMARIZATION.md)**    | Automatic conversation compression for long-running sessions to stay within token limits.          |
 | :material-server-network: **[LiteLLM Integration](../LITELLM-INTEGRATION.md)**      | Access 100+ AI models from all major providers through unified LiteLLM routing interface.          |
 | :material-aws: **[SageMaker Integration](../SAGEMAKER-INTEGRATION.md)**             | Deploy and use custom trained models on AWS SageMaker infrastructure with full control.            |
 
@@ -42,7 +42,7 @@ Comprehensive guides for all NeuroLink features organized by category. Each guid
 | **Provider unification** | 12+ providers with automatic failover, cost-aware routing, provider orchestration (Q3)       | [Provider Setup](../getting-started/provider-setup.md)                                            |
 | **Multimodal pipeline**  | Stream images + text across providers with local/remote assets (Q3 2025)                     | [Multimodal Guide](multimodal-chat.md)                                                            |
 | **Quality & governance** | Auto-evaluation engine (Q3), guardrails middleware (Q4), HITL workflows (Q4), audit logging  | [Auto Evaluation](auto-evaluation.md), [Guardrails](guardrails.md), [HITL](hitl.md)               |
-| **Memory & context**     | Conversation memory, Mem0 integration, Redis history export (Q4), context summarization (Q4) | [Conversation Memory](../CONVERSATION-MEMORY.md), [Redis Export](conversation-history.md)         |
+| **Memory & context**     | Conversation memory, Mem0 integration, conversation history (Q4), context summarization (Q4) | [Conversation Memory](../CONVERSATION-MEMORY.md), [History Management](conversation-history.md)    |
 | **CLI tooling**          | Loop sessions (Q3), setup wizard, config validation, Redis auto-detect, JSON output          | [CLI Loop](cli-loop-sessions.md), [CLI Commands](../cli/commands.md)                              |
 | **Enterprise ops**       | Proxy support, regional routing (Q3), telemetry hooks, configuration management              | [Enterprise Proxy](../ENTERPRISE-PROXY-SETUP.md), [Telemetry](../TELEMETRY-GUIDE.md)              |
 | **Tool ecosystem**       | MCP auto discovery, LiteLLM hub access, SageMaker custom deployment, web search              | [MCP Integration](../advanced/mcp-integration.md), [MCP Catalog](../guides/mcp/server-catalog.md) |
@@ -298,7 +298,7 @@ NeuroLink features a powerful **interactive loop mode** that transforms the CLI 
 - Persistent session variables: `set provider openai`, `set temperature 0.9`
 - Conversation memory: AI remembers previous turns within session
 - Redis auto-detection: Automatically connects if `REDIS_URL` is set
-- Export session history as JSON for analytics
+- View session history with `memory history` command
 
 ### Quick Start
 
