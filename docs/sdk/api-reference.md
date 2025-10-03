@@ -333,7 +333,7 @@ const neurolinkComplete = new NeuroLink({
 
 See also:
 
-- [Redis Conversation Export](../features/conversation-history.md)
+- [Conversation History Management](../features/conversation-history.md)
 - [Guardrails Middleware](../features/guardrails.md)
 - [Provider Orchestration](../features/provider-orchestration.md)
 
@@ -420,52 +420,29 @@ Access the unified MCP registry for advanced server management.
 getUnifiedRegistry(): UnifiedMCPRegistry
 ```
 
-### `exportConversationHistory(options)` (Q4 2025)
+### `getConversationHistory(sessionId)`
 
-**NEW!** Export conversation session history from Redis storage as JSON or CSV for analytics, debugging, and compliance.
+Retrieve all messages for a conversation session.
 
 ```typescript
-async exportConversationHistory(options: ExportOptions): Promise<ConversationHistory>
+async getConversationHistory(sessionId: string): Promise<ChatMessage[]>
 ```
 
 **Parameters:**
 
-```typescript
-interface ExportOptions {
-  sessionId: string; // Session ID to export
-  format?: "json" | "csv"; // Default: 'json'
-  includeMetadata?: boolean; // Default: true
-  startTime?: Date; // Filter: export from this time
-  endTime?: Date; // Filter: export until this time
-}
-```
+- `sessionId` (string) - The unique session identifier
 
 **Returns:**
 
 ```typescript
-interface ConversationHistory {
-  sessionId: string;
-  userId?: string;
-  createdAt: string;
-  updatedAt: string;
-  turns: Array<{
-    index: number;
-    role: "user" | "assistant";
-    content: string;
-    timestamp: string;
-    model?: string;
-    provider?: string;
-    tokens?: {
-      prompt: number;
-      completion: number;
-    };
-  }>;
-  metadata?: {
-    provider?: string;
-    model?: string;
-    totalTurns: number;
-    toolsUsed?: string[];
-  };
+interface ChatMessage {
+  role: "user" | "assistant" | "system" | "tool_call" | "tool_result";
+  content: string;
+  id?: string;        // Optional message ID
+  timestamp?: string; // Optional timestamp
+  tool?: string;      // For tool messages
+  args?: Record<string, unknown>;    // For tool_call
+  result?: ToolResult; // For tool_result
 }
 ```
 
@@ -477,74 +454,96 @@ import { NeuroLink } from "@juspay/neurolink";
 const neurolink = new NeuroLink({
   conversationMemory: {
     enabled: true,
-    store: "redis",
   },
 });
 
-// Export session as JSON
-const history = await neurolink.exportConversationHistory({
-  sessionId: "session-abc123",
-  format: "json",
-  includeMetadata: true,
+// Have a conversation
+await neurolink.generate({
+  prompt: "What is machine learning?",
+  context: { sessionId: "session-123" },
 });
 
-console.log(history.turns.length); // Number of conversation turns
-console.log(history.metadata); // Session metadata
+// Get conversation history
+const history = await neurolink.getConversationHistory("session-123");
 
-// Export with time filtering
-const recentHistory = await neurolink.exportConversationHistory({
-  sessionId: "session-abc123",
-  startTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // Last 24 hours
-  endTime: new Date(),
-});
+console.log(history);
+// [
+//   { role: "user", content: "What is machine learning?" },
+//   { role: "assistant", content: "Machine learning is..." }
+// ]
 
-// Export as CSV for analytics
-const csvHistory = await neurolink.exportConversationHistory({
-  sessionId: "session-abc123",
-  format: "csv",
-});
+// Process history
+const userMessages = history.filter(m => m.role === "user");
+const assistantMessages = history.filter(m => m.role === "assistant");
 ```
 
-**Note:** Requires `conversationMemory.store: 'redis'` configuration. In-memory storage does not support export.
+See also: [Conversation History Guide](../features/conversation-history.md)
 
-See also: [Redis Conversation Export Guide](../features/conversation-history.md)
+### `getConversationStats()`
 
-### `getActiveSessions()` (Q4 2025)
-
-**NEW!** Get list of all active conversation sessions stored in Redis.
+Get memory statistics across all conversation sessions.
 
 ```typescript
-async getActiveSessions(): Promise<string[]>
+async getConversationStats(): Promise<ConversationMemoryStats>
 ```
 
-**Returns:** Array of session IDs
-
-**Example:**
+**Returns:**
 
 ```typescript
-const sessions = await neurolink.getActiveSessions();
-console.log(`Active sessions: ${sessions.length}`);
-
-// Export all sessions
-for (const sessionId of sessions) {
-  const history = await neurolink.exportConversationHistory({ sessionId });
-  await saveToDatabase(history);
+interface ConversationMemoryStats {
+  totalSessions: number;  // Number of active sessions
+  totalTurns: number;     // Total conversation turns across all sessions
 }
 ```
 
-### `deleteConversationHistory(sessionId)` (Q4 2025)
-
-**NEW!** Delete a conversation session from Redis storage.
+**Example:**
 
 ```typescript
-async deleteConversationHistory(sessionId: string): Promise<void>
+const stats = await neurolink.getConversationStats();
+console.log(`Active sessions: ${stats.totalSessions}`);
+console.log(`Total turns: ${stats.totalTurns}`);
+```
+
+### `clearConversationSession(sessionId)`
+
+Clear a specific conversation session from memory.
+
+```typescript
+async clearConversationSession(sessionId: string): Promise<boolean>
+```
+
+**Parameters:**
+
+- `sessionId` (string) - The session identifier to clear
+
+**Returns:** `true` if session existed and was cleared, `false` if session didn't exist
+
+**Example:**
+
+```typescript
+// Clear a specific session
+const cleared = await neurolink.clearConversationSession("session-123");
+if (cleared) {
+  console.log("Session cleared successfully");
+} else {
+  console.log("Session not found");
+}
+```
+
+### `clearAllConversations()`
+
+Clear all conversation sessions from memory.
+
+```typescript
+async clearAllConversations(): Promise<void>
 ```
 
 **Example:**
 
 ```typescript
-// Clean up old session
-await neurolink.deleteConversationHistory("session-abc123");
+// Clear all sessions
+await neurolink.clearAllConversations();
+console.log("All conversation sessions cleared");
 ```
 
 These methods have identical signatures and behavior to `generate()`.
@@ -2793,7 +2792,7 @@ neurolink mcp test filesystem
 
 - [Human-in-the-Loop (HITL)](../features/hitl.md) – Mark tools with `requiresConfirmation: true`
 - [Guardrails Middleware](../features/guardrails.md) – Enable with `middleware: { preset: 'security' }`
-- [Redis Conversation Export](../features/conversation-history.md) – Use `exportConversationHistory()` method
+- [Conversation History Management](../features/conversation-history.md) – Use `getConversationHistory()` method
 
 **Q3 2025:**
 

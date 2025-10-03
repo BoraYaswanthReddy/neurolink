@@ -139,7 +139,7 @@ npx @juspay/neurolink loop --enable-conversation-memory --no-auto-redis
 - Persistent session variables: `set provider openai`, `set temperature 0.9`
 - Conversation memory: AI remembers previous turns within session
 - Redis auto-detection: Automatically connects if `REDIS_URL` is set
-- Export session history as JSON for analytics
+- View session history with `memory history` command
 
 **Session management commands (inside loop):**
 
@@ -288,7 +288,7 @@ For advanced workflows (batching, tooling, configuration management) see the rel
 **Q4 2025:**
 
 - [CLI Loop Sessions](../features/cli-loop-sessions.md) – Persistent interactive mode with session management
-- [Redis Conversation Export](../features/conversation-history.md) – Export session history via `memory export`
+- [Conversation History](../features/conversation-history.md) – View session history via `memory history`
 - [Guardrails Middleware](../features/guardrails.md) – Content filtering (use `--middleware-preset security`)
 
 **Q3 2025:**

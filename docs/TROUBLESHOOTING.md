@@ -51,13 +51,13 @@ This guide helps diagnose and resolve common issues with NeuroLink, including AI
 | Too many false positives   | Review bad word list, remove common words → See [Guardrails Guide](features/guardrails.md#best-practices)            |
 | Model-based filter is slow | Switch to `gpt-4o-mini` for faster filtering → See [Guardrails Guide](features/guardrails.md#troubleshooting)        |
 
-### Redis Conversation Export
+### Conversation History Management
 
 | Issue                                        | Solution                                                                                                                                    |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Export returns empty history                 | Verify Redis connection and session ID exists → See [Conversation History Guide](features/conversation-history.md#troubleshooting)          |
-| `exportConversationHistory` method not found | Ensure `conversationMemory.store: "redis"` is configured → See [Conversation History Guide](features/conversation-history.md#configuration) |
-| Missing metadata in export                   | Set `includeMetadata: true` in export options → See [Conversation History Guide](features/conversation-history.md#advanced-usage)           |
+| History returns empty array                  | Verify session ID exists and conversation occurred → See [Conversation History Guide](features/conversation-history.md#troubleshooting)     |
+| "Conversation memory is not enabled"         | Ensure `conversationMemory.enabled: true` is configured → See [Conversation History Guide](features/conversation-history.md#configuration)  |
+| Sessions not persisting across restarts      | Configure Redis storage with `store: "redis"` → See [Conversation History Guide](features/conversation-history.md#storage-backends)         |
 
 ## 🎯 **Generate Function Migration Issues**
 
