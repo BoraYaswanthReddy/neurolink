@@ -1,3 +1,9 @@
+## [8.2.0](https://github.com/juspay/neurolink/compare/v8.1.0...v8.2.0) (2025-11-25)
+
+### Features
+
+- **(vertex):** add global endpoint support for Gemini 3 Pro Preview ([5de2cbe](https://github.com/juspay/neurolink/commit/5de2cbe3f37ef3355f5d506c03ae4417f430724c))
+
 ## [8.1.0](https://github.com/juspay/neurolink/compare/v8.0.1...v8.1.0) (2025-11-20)
 
 ### Features
