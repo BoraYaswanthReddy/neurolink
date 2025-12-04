@@ -1,3 +1,9 @@
+## [8.4.1](https://github.com/juspay/neurolink/compare/v8.4.0...v8.4.1) (2025-12-04)
+
+### Bug Fixes
+
+- **(mem0):** custom instructions support for mem0 conversation ingestion ([486c55c](https://github.com/juspay/neurolink/commit/486c55c64eeaecf6704aea7a7bf5310270476be5))
+
 ## [8.4.0](https://github.com/juspay/neurolink/compare/v8.3.0...v8.4.0) (2025-12-01)
 
 ### Features
