@@ -1,3 +1,14 @@
+## [8.6.0](https://github.com/juspay/neurolink/compare/v8.5.1...v8.6.0) (2025-12-06)
+
+### Features
+
+- **(multimodal):** add altText support to ImageContent for accessibility ([27118c8](https://github.com/juspay/neurolink/commit/27118c87c73bc1eb6389bbc49dd2e59f1cc4c523)), closes [#565](https://github.com/juspay/neurolink/issues/565)
+
+### Bug Fixes
+
+- **(guardrails):** added fallback for guardrail errors on azure's jailbreak errors ([ae42552](https://github.com/juspay/neurolink/commit/ae4255255657c00ea164730dbd61fbad9f65f339))
+- **(observability):** add support to let applications customize traces ([608d991](https://github.com/juspay/neurolink/commit/608d991114c5df2335be73f44a24a187f424373a))
+
 ## [8.5.1](https://github.com/juspay/neurolink/compare/v8.5.0...v8.5.1) (2025-12-04)
 
 ### Bug Fixes
