@@ -1,3 +1,9 @@
+## [8.8.0](https://github.com/juspay/neurolink/compare/v8.7.0...v8.8.0) (2025-12-11)
+
+### Features
+
+- **(types):** add AudioProviderConfig type definition for transcription providers ([c34f437](https://github.com/juspay/neurolink/commit/c34f437455fba20b803b84811b9dda143351427e))
+
 ## [8.7.0](https://github.com/juspay/neurolink/compare/v8.6.0...v8.7.0) (2025-12-10)
 
 ### Features
