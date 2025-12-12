@@ -1,3 +1,9 @@
+## [8.10.1](https://github.com/juspay/neurolink/compare/v8.10.0...v8.10.1) (2025-12-12)
+
+### Bug Fixes
+
+- **(ci):** check formatting instead of auto-fix to catch issues during PR builds ([6af89d2](https://github.com/juspay/neurolink/commit/6af89d233e444ff5cb4b7d38964d3ac2b6fc19bf))
+
 ## [8.10.0](https://github.com/juspay/neurolink/compare/v8.9.0...v8.10.0) (2025-12-12)
 
 ### Features
