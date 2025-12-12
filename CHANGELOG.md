@@ -1,3 +1,14 @@
+## [8.10.0](https://github.com/juspay/neurolink/compare/v8.9.0...v8.10.0) (2025-12-12)
+
+### Features
+
+- **(cli):** add video CLI flags tests and verification ([2d75347](https://github.com/juspay/neurolink/commit/2d753473cc75a219db4425783f4a062cca23873b))
+- **(models):** add GPT-5.2 and comprehensive model updates across all providers ([b75042f](https://github.com/juspay/neurolink/commit/b75042fcb98bbf19bdfe6f197ac12d6752b291ee))
+
+### Bug Fixes
+
+- **(ci):** use minimal plugins for semantic-release validation to avoid npm auth requirement ([f3ab09e](https://github.com/juspay/neurolink/commit/f3ab09e0cdc79ae70e55a37246d0edfe9a41a77d))
+
 ## [8.9.0](https://github.com/juspay/neurolink/compare/v8.8.0...v8.9.0) (2025-12-11)
 
 ### Features
