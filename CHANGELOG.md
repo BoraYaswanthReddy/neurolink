@@ -1,3 +1,9 @@
+## [8.13.1](https://github.com/juspay/neurolink/compare/v8.13.0...v8.13.1) (2025-12-13)
+
+### Bug Fixes
+
+- **(provider):** Implement image count limits with validation and warnings ([ff3e27a](https://github.com/juspay/neurolink/commit/ff3e27a5ab3aafffc8312f645e0ebc566600cc63))
+
 ## [8.13.0](https://github.com/juspay/neurolink/compare/v8.12.0...v8.13.0) (2025-12-13)
 
 ### Features
