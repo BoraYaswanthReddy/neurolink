@@ -1,3 +1,9 @@
+## [8.13.2](https://github.com/juspay/neurolink/compare/v8.13.1...v8.13.2) (2025-12-14)
+
+### Bug Fixes
+
+- **(sdk):** Replace hardcoded timeouts with class constants ([a34c291](https://github.com/juspay/neurolink/commit/a34c29155e82ef4f498714c031401463351171bd))
+
 ## [8.13.1](https://github.com/juspay/neurolink/compare/v8.13.0...v8.13.1) (2025-12-13)
 
 ### Bug Fixes
