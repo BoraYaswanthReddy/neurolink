@@ -1,3 +1,9 @@
+## [8.23.2](https://github.com/juspay/neurolink/compare/v8.23.1...v8.23.2) (2025-12-27)
+
+### Bug Fixes
+
+- **(format):** Add format validation to PDF image conversion ([bdd3285](https://github.com/juspay/neurolink/commit/bdd32855daa25d1e0fd1e94db6d97055fd5bd478))
+
 ## [8.23.1](https://github.com/juspay/neurolink/compare/v8.23.0...v8.23.1) (2025-12-24)
 
 ### Bug Fixes
