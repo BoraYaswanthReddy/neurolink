@@ -1,3 +1,9 @@
+## [8.24.0](https://github.com/juspay/neurolink/compare/v8.23.2...v8.24.0) (2025-12-28)
+
+### Features
+
+- **(openrouter):** add OpenRouter provider with 300+ model support ([563611f](https://github.com/juspay/neurolink/commit/563611f84c154e2966aebb6e8a414fcb60a26fd3)), closes [#608](https://github.com/juspay/neurolink/issues/608)
+
 ## [8.23.2](https://github.com/juspay/neurolink/compare/v8.23.1...v8.23.2) (2025-12-27)
 
 ### Bug Fixes
