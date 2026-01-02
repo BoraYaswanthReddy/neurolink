@@ -1,3 +1,9 @@
+## [8.29.0](https://github.com/juspay/neurolink/compare/v8.28.0...v8.29.0) (2026-01-02)
+
+### Features
+
+- **(mcp):** add HTTP/Streamable HTTP transport support for MCP servers ([67f1c23](https://github.com/juspay/neurolink/commit/67f1c23ac2d5e687b7455c627da952a820af773b))
+
 ## [8.28.0](https://github.com/juspay/neurolink/compare/v8.27.0...v8.28.0) (2026-01-02)
 
 ### Features
