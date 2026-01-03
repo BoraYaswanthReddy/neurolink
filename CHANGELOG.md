@@ -1,3 +1,9 @@
+## [8.30.0](https://github.com/juspay/neurolink/compare/v8.29.0...v8.30.0) (2026-01-03)
+
+### Features
+
+- **(video):** add video generation support to NeuroLink SDK with Vertex AI ([6b490a1](https://github.com/juspay/neurolink/commit/6b490a1f436a823ff6bad41fc77f98d62be08c68))
+
 ## [8.29.0](https://github.com/juspay/neurolink/compare/v8.28.0...v8.29.0) (2026-01-02)
 
 ### Features
