@@ -1,3 +1,9 @@
+## [8.33.0](https://github.com/juspay/neurolink/compare/v8.32.0...v8.33.0) (2026-01-12)
+
+### Features
+
+- **(action):** add GitHub Action for AI-powered CI/CD workflows ([fa18326](https://github.com/juspay/neurolink/commit/fa183264467e271ed5d825c6a961bdebf3d0000c))
+
 ## [8.32.0](https://github.com/juspay/neurolink/compare/v8.31.3...v8.32.0) (2026-01-05)
 
 ### Features
