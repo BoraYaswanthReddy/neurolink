@@ -1,3 +1,9 @@
+## [8.35.2](https://github.com/juspay/neurolink/compare/v8.35.1...v8.35.2) (2026-01-15)
+
+### Bug Fixes
+
+- **(provider):** add network retry logic with exponential backoff to detection operations ([3b29e24](https://github.com/juspay/neurolink/commit/3b29e248766fac01f1e3ea368e9439233957121e))
+
 ## [8.35.1](https://github.com/juspay/neurolink/compare/v8.35.0...v8.35.1) (2026-01-15)
 
 ### Bug Fixes
