@@ -1,3 +1,9 @@
+## [9.0.1](https://github.com/juspay/neurolink/compare/v9.0.0...v9.0.1) (2026-02-03)
+
+### Bug Fixes
+
+- **(pdf-processor):** enforce page limits by default with actionable alternatives ([35576aa](https://github.com/juspay/neurolink/commit/35576aa210b5a9a0bce8e6c5df041351905f0c96))
+
 ## [9.0.0](https://github.com/juspay/neurolink/compare/v8.43.0...v9.0.0) (2026-02-03)
 
 ### ⚠ BREAKING CHANGES
