@@ -1,3 +1,9 @@
+## [9.4.0](https://github.com/juspay/neurolink/compare/v9.3.0...v9.4.0) (2026-02-09)
+
+### Features
+
+- **(workflow):** implement comprehensive workflow engine for multi-model orchestration ([9257385](https://github.com/juspay/neurolink/commit/9257385e4b961dd14e21f85250b4947be9c0e7b6))
+
 ## [9.3.0](https://github.com/juspay/neurolink/compare/v9.2.0...v9.3.0) (2026-02-08)
 
 ### Features
