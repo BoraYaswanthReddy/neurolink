@@ -1,3 +1,9 @@
+## [9.5.2](https://github.com/juspay/neurolink/compare/v9.5.1...v9.5.2) (2026-02-12)
+
+### Bug Fixes
+
+- **(landing):** use dynamic GSAP imports in reveal action for SSR compatibility ([ec2ada5](https://github.com/juspay/neurolink/commit/ec2ada5c506bc3d51c419002b1a10b7b94bf00f8))
+
 ## [9.5.1](https://github.com/juspay/neurolink/compare/v9.5.0...v9.5.1) (2026-02-12)
 
 ### Bug Fixes
