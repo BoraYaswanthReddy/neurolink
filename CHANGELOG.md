@@ -1,3 +1,9 @@
+## [9.8.0](https://github.com/juspay/neurolink/compare/v9.7.0...v9.8.0) (2026-02-17)
+
+### Features
+
+- **(scripts):** migrate peripheral JS/CJS/MJS files to TypeScript with tsx runner ([25f17e8](https://github.com/juspay/neurolink/commit/25f17e81c09d6184a4bf2ff15e4427c302fde55e))
+
 ## [9.7.0](https://github.com/juspay/neurolink/compare/v9.6.0...v9.7.0) (2026-02-16)
 
 ### Features
