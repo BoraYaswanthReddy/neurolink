@@ -1,3 +1,9 @@
+## [9.12.1](https://github.com/juspay/neurolink/compare/v9.12.0...v9.12.1) (2026-02-23)
+
+### Bug Fixes
+
+- **(core):** lazy-load sharp and stop leaking framework types in .d.ts ([4ecc448](https://github.com/juspay/neurolink/commit/4ecc4482dbf1b0ef30de537a0edd9b6d4ce67a3f))
+
 ## [9.12.0](https://github.com/juspay/neurolink/compare/v9.11.0...v9.12.0) (2026-02-23)
 
 ### Features
