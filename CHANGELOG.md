@@ -1,3 +1,9 @@
+## [9.17.1](https://github.com/juspay/neurolink/compare/v9.17.0...v9.17.1) (2026-03-07)
+
+### Bug Fixes
+
+- **(docs):** wire up local search fallback and fix search index quality ([1b8406c](https://github.com/juspay/neurolink/commit/1b8406cd26ebf19d50a2136ef9d6314a42ef8b27))
+
 ## [9.17.0](https://github.com/juspay/neurolink/compare/v9.16.0...v9.17.0) (2026-03-06)
 
 ### Features
