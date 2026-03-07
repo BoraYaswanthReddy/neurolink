@@ -1,3 +1,9 @@
+## [9.19.1](https://github.com/juspay/neurolink/compare/v9.19.0...v9.19.1) (2026-03-07)
+
+### Bug Fixes
+
+- **(docs):** fix search results overlap by enabling dynamic row measurement ([8117541](https://github.com/juspay/neurolink/commit/81175416db780da9de7157f3f057c5b0c78dd7b5))
+
 ## [9.19.0](https://github.com/juspay/neurolink/compare/v9.18.0...v9.19.0) (2026-03-07)
 
 ### Features
