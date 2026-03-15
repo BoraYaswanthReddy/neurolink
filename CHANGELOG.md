@@ -1,3 +1,9 @@
+## [9.25.1](https://github.com/juspay/neurolink/compare/v9.25.0...v9.25.1) (2026-03-15)
+
+### Bug Fixes
+
+- **(observability):** address code review findings from PR [#860](https://github.com/juspay/neurolink/issues/860) ([1655c7e](https://github.com/juspay/neurolink/commit/1655c7ef6991eb104834e10fa7d21516539ea16d))
+
 ## [9.25.0](https://github.com/juspay/neurolink/compare/v9.24.0...v9.25.0) (2026-03-15)
 
 ### Features
