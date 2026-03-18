@@ -1,3 +1,9 @@
+## [9.28.1](https://github.com/juspay/neurolink/compare/v9.28.0...v9.28.1) (2026-03-18)
+
+### Bug Fixes
+
+- **(docs):** comprehensive documentation audit, code example fixes, and model updates ([f294ff2](https://github.com/juspay/neurolink/commit/f294ff2eef71a09e271c5dc536a9d00d97cfd5e5))
+
 ## [9.28.0](https://github.com/juspay/neurolink/compare/v9.27.0...v9.28.0) (2026-03-18)
 
 ### Features
