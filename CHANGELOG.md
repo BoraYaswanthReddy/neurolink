@@ -1,3 +1,9 @@
+## [9.27.0](https://github.com/juspay/neurolink/compare/v9.26.2...v9.27.0) (2026-03-18)
+
+### Features
+
+- **(memory):** add CustomStorageConfig type to Hippocampus integration ([dfcea2b](https://github.com/juspay/neurolink/commit/dfcea2b04834a86812f13c5d85ad3d7b9ab530a7))
+
 ## [9.26.2](https://github.com/juspay/neurolink/compare/v9.26.1...v9.26.2) (2026-03-18)
 
 ### Bug Fixes
