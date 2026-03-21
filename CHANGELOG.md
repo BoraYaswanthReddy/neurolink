@@ -1,3 +1,9 @@
+## [9.30.0](https://github.com/juspay/neurolink/compare/v9.29.1...v9.30.0) (2026-03-21)
+
+### Features
+
+- **(middleware):** add lifecycle middleware with onFinish, onError, onChunk callbacks ([2d23087](https://github.com/juspay/neurolink/commit/2d230879272a8e67fd936ff087b232bb25f612c0))
+
 ## [9.29.1](https://github.com/juspay/neurolink/compare/v9.29.0...v9.29.1) (2026-03-20)
 
 ### Bug Fixes
