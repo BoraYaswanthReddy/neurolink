@@ -1,3 +1,9 @@
+## [9.31.2](https://github.com/juspay/neurolink/compare/v9.31.1...v9.31.2) (2026-03-25)
+
+### Bug Fixes
+
+- **(proxy):** skip launchd guard when launched by launchd itself ([183996d](https://github.com/juspay/neurolink/commit/183996d40e6c718d87f1a0d3ccfc6107328cd728))
+
 ## [9.31.1](https://github.com/juspay/neurolink/compare/v9.31.0...v9.31.1) (2026-03-25)
 
 ### Bug Fixes
