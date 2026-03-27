@@ -1,3 +1,9 @@
+## [9.32.1](https://github.com/juspay/neurolink/compare/v9.32.0...v9.32.1) (2026-03-27)
+
+### Bug Fixes
+
+- **(proxy):** improve stability with timeout, stream safety, and launchd fixes ([393f32b](https://github.com/juspay/neurolink/commit/393f32bc3f8c07651d4da06b2501bc5358664100))
+
 ## [9.32.0](https://github.com/juspay/neurolink/compare/v9.31.2...v9.32.0) (2026-03-25)
 
 ### Features
