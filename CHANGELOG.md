@@ -1,3 +1,9 @@
+## [9.36.1](https://github.com/juspay/neurolink/compare/v9.36.0...v9.36.1) (2026-03-28)
+
+### Bug Fixes
+
+- **(proxy):** change default strategy from round-robin to fill-first ([067ec34](https://github.com/juspay/neurolink/commit/067ec34044e2bce162e78dca2ebe104aed1560e2))
+
 ## [9.36.0](https://github.com/juspay/neurolink/compare/v9.35.0...v9.36.0) (2026-03-28)
 
 ### Features
