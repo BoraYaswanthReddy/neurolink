@@ -1,3 +1,9 @@
+## [9.49.0](https://github.com/juspay/neurolink/compare/v9.48.3...v9.49.0) (2026-04-08)
+
+### Features
+
+- **(redis):** add URL-based connection support with TLS ([0b22f46](https://github.com/juspay/neurolink/commit/0b22f46d2c1783fac2bbd5eba62c7f34967fb4ff))
+
 ## [9.48.3](https://github.com/juspay/neurolink/compare/v9.48.2...v9.48.3) (2026-04-08)
 
 ### Bug Fixes
