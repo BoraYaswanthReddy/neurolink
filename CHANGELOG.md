@@ -1,3 +1,9 @@
+## [9.54.2](https://github.com/juspay/neurolink/compare/v9.54.1...v9.54.2) (2026-04-12)
+
+### Bug Fixes
+
+- **(proxy):** resolve 3 production bugs from Curator monitoring ([e458057](https://github.com/juspay/neurolink/commit/e4580574fbe69541bd0c5a06e10ec025e39e19cf))
+
 ## [9.54.1](https://github.com/juspay/neurolink/compare/v9.54.0...v9.54.1) (2026-04-12)
 
 ### Bug Fixes
