@@ -1,3 +1,9 @@
+## [9.52.0](https://github.com/juspay/neurolink/compare/v9.51.4...v9.52.0) (2026-04-12)
+
+### Features
+
+- **(credentials):** add per-request and per-instance credential support for all providers ([edd07bb](https://github.com/juspay/neurolink/commit/edd07bb5475d4ef33a9ce29915913ebcd8a6904b))
+
 ## [9.51.4](https://github.com/juspay/neurolink/compare/v9.51.3...v9.51.4) (2026-04-12)
 
 ### Bug Fixes
