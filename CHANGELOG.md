@@ -1,3 +1,9 @@
+## [9.55.0](https://github.com/juspay/neurolink/compare/v9.54.9...v9.55.0) (2026-04-18)
+
+### Features
+
+- **(gemini3):** add support for conversation memory for gemini 3 models ([0459627](https://github.com/juspay/neurolink/commit/0459627c7612343ad3fc462cea4036c993ace0fd))
+
 ## [9.54.9](https://github.com/juspay/neurolink/compare/v9.54.8...v9.54.9) (2026-04-18)
 
 ## [9.54.8](https://github.com/juspay/neurolink/compare/v9.54.7...v9.54.8) (2026-04-18)
