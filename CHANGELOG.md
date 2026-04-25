@@ -1,3 +1,9 @@
+## [9.57.1](https://github.com/juspay/neurolink/compare/v9.57.0...v9.57.1) (2026-04-25)
+
+### Bug Fixes
+
+- **(conversation-memory):** stop persisting abort sentinel; add typed AbortError + read-time filter (SI-069/SI-071) ([595b355](https://github.com/juspay/neurolink/commit/595b3558d9bc4eeb4121f0504b9f077ef5f01729))
+
 ## [9.57.0](https://github.com/juspay/neurolink/compare/v9.56.2...v9.57.0) (2026-04-25)
 
 ### Features
