@@ -1,3 +1,9 @@
+## [9.59.1](https://github.com/juspay/neurolink/compare/v9.59.0...v9.59.1) (2026-04-26)
+
+### Bug Fixes
+
+- **(observability):** emit generation:end exactly once on stream finalize ([9bd2cd0](https://github.com/juspay/neurolink/commit/9bd2cd0a16484fa93ef8c5aaa018b4323632f094))
+
 ## [9.59.0](https://github.com/juspay/neurolink/compare/v9.58.0...v9.59.0) (2026-04-26)
 
 ### Features
