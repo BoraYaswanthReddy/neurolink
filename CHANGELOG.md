@@ -1,3 +1,9 @@
+## [9.58.0](https://github.com/juspay/neurolink/compare/v9.57.1...v9.58.0) (2026-04-26)
+
+### Features
+
+- **(fallback):** providerFallback callback + modelChain config for centralized policy ([92e5026](https://github.com/juspay/neurolink/commit/92e5026ac48ca98c640cd1793b4c194c8b84a128))
+
 ## [9.57.1](https://github.com/juspay/neurolink/compare/v9.57.0...v9.57.1) (2026-04-25)
 
 ### Bug Fixes
