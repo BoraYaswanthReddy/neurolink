@@ -1,3 +1,9 @@
+## [9.59.0](https://github.com/juspay/neurolink/compare/v9.58.0...v9.59.0) (2026-04-26)
+
+### Features
+
+- **(errors):** typed ModelAccessDeniedError + sdk.checkCredentials() API ([1ffc5bc](https://github.com/juspay/neurolink/commit/1ffc5bc44ce411086f130cc7ee33cb094290b108))
+
 ## [9.58.0](https://github.com/juspay/neurolink/compare/v9.57.1...v9.58.0) (2026-04-26)
 
 ### Features
