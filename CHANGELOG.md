@@ -1,3 +1,9 @@
+## [9.59.4](https://github.com/juspay/neurolink/compare/v9.59.3...v9.59.4) (2026-04-27)
+
+### Bug Fixes
+
+- **(proxy):** replace blocking quiet-gate with best-effort wait for auto-updates ([defd6e0](https://github.com/juspay/neurolink/commit/defd6e0f177abea19e490ebe8bd8ea492f6bebca))
+
 ## [9.59.3](https://github.com/juspay/neurolink/compare/v9.59.2...v9.59.3) (2026-04-27)
 
 ### Bug Fixes
