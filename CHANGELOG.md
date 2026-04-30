@@ -1,3 +1,9 @@
+## [9.60.1](https://github.com/juspay/neurolink/compare/v9.60.0...v9.60.1) (2026-04-30)
+
+### Bug Fixes
+
+- **(proxy):** validate pnpm global store compatibility before auto-update install ([ac573ad](https://github.com/juspay/neurolink/commit/ac573adc688aa28376d4b39ffa8e6bb7539cb40e))
+
 ## [9.60.0](https://github.com/juspay/neurolink/compare/v9.59.6...v9.60.0) (2026-04-30)
 
 ### Features
