@@ -1,3 +1,9 @@
+## [9.60.0](https://github.com/juspay/neurolink/compare/v9.59.6...v9.60.0) (2026-04-30)
+
+### Features
+
+- **(providers):** integrate DeepSeek, NVIDIA NIM, LM Studio, llama.cpp ([c829f4d](https://github.com/juspay/neurolink/commit/c829f4dea09bf3a6eae08c4902f9293bfb6c05f6))
+
 ## [9.59.6](https://github.com/juspay/neurolink/compare/v9.59.5...v9.59.6) (2026-04-30)
 
 ### Bug Fixes
