@@ -1,3 +1,9 @@
+## [9.61.0](https://github.com/juspay/neurolink/compare/v9.60.1...v9.61.0) (2026-05-01)
+
+### Features
+
+- **(tokens):** cap Gemini 3 + image models at 32768 output tokens ([62a0016](https://github.com/juspay/neurolink/commit/62a00165101c891905241a56b90b2811148379d3))
+
 ## [9.60.1](https://github.com/juspay/neurolink/compare/v9.60.0...v9.60.1) (2026-04-30)
 
 ### Bug Fixes
