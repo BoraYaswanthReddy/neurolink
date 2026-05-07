@@ -1,3 +1,9 @@
+## [9.62.0](https://github.com/juspay/neurolink/compare/v9.61.2...v9.62.0) (2026-05-07)
+
+### Features
+
+- **(voice):** add multi-provider TTS, STT, and realtime voice integration ([4b26485](https://github.com/juspay/neurolink/commit/4b26485b6408eed29b2c608afb98a131fcb4a5ba))
+
 ## [9.61.2](https://github.com/juspay/neurolink/compare/v9.61.1...v9.61.2) (2026-05-07)
 
 ### Bug Fixes
