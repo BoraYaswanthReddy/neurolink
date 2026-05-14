@@ -1,3 +1,9 @@
+## [9.63.1](https://github.com/juspay/neurolink/compare/v9.63.0...v9.63.1) (2026-05-14)
+
+### Bug Fixes
+
+- **(conversation-history):** remove conversation title truncation and character limit prompt constraint ([cf3d9b7](https://github.com/juspay/neurolink/commit/cf3d9b71541c57dfabe462053d06939cce8614c1))
+
 ## [9.63.0](https://github.com/juspay/neurolink/compare/v9.62.0...v9.63.0) (2026-05-09)
 
 ### Features
