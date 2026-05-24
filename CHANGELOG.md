@@ -1,3 +1,9 @@
+## [9.66.0](https://github.com/juspay/neurolink/compare/v9.65.2...v9.66.0) (2026-05-24)
+
+### Features
+
+- **(proxy):** add OpenAI-compatible endpoint with OpenCode auto-configuration ([b2df40e](https://github.com/juspay/neurolink/commit/b2df40e57b9c49759d3828d16a135d4e029c50cb))
+
 ## [9.65.2](https://github.com/juspay/neurolink/compare/v9.65.1...v9.65.2) (2026-05-24)
 
 ## [9.65.1](https://github.com/juspay/neurolink/compare/v9.65.0...v9.65.1) (2026-05-24)
