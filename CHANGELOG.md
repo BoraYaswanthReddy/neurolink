@@ -1,3 +1,9 @@
+## [9.68.5](https://github.com/juspay/neurolink/compare/v9.68.4...v9.68.5) (2026-06-06)
+
+### Bug Fixes
+
+- **(providers):** retry model auto-discovery after a failed probe ([f7242d3](https://github.com/juspay/neurolink/commit/f7242d31368d16c3e13aa4898ab1a86023e1ea30))
+
 ## [9.68.4](https://github.com/juspay/neurolink/compare/v9.68.3...v9.68.4) (2026-06-05)
 
 ## [9.68.3](https://github.com/juspay/neurolink/compare/v9.68.2...v9.68.3) (2026-06-04)
