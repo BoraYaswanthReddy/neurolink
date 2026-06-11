@@ -1,3 +1,9 @@
+## [9.70.0](https://github.com/juspay/neurolink/compare/v9.69.3...v9.70.0) (2026-06-11)
+
+### Features
+
+- **(voice):** add LiveKit WebRTC voice agent integration ([26fdac5](https://github.com/juspay/neurolink/commit/26fdac5f7ae1eebae1eb211ec65c5f4a431a3a51))
+
 ## [9.69.3](https://github.com/juspay/neurolink/compare/v9.69.2...v9.69.3) (2026-06-08)
 
 ### Bug Fixes
