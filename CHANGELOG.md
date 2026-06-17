@@ -1,3 +1,9 @@
+## [9.72.0](https://github.com/juspay/neurolink/compare/v9.71.0...v9.72.0) (2026-06-17)
+
+### Features
+
+- **(tool-routing):** pre-call per-turn tool routing via config ([d78d691](https://github.com/juspay/neurolink/commit/d78d6912b83e9b0ec75245f1624cc7e11d4fb1b0))
+
 ## [9.71.0](https://github.com/juspay/neurolink/compare/v9.70.7...v9.71.0) (2026-06-16)
 
 ### Features
